@@ -18,10 +18,9 @@ import org.json.JSONObject;
 public class GetIDs {
 
 	public static void main(String[] args) throws IOException, JSONException {
-		boolean returnedError = false;
 		ArrayList<Champion> champs = new ArrayList<Champion>();
-		int ctr = 1;
-		String apiKey = "b40cf360-ac52-479d-b9eb-06dc99bdea83";
+
+		String apiKey = APIKey.getKey();
 		JSONObject json = readJsonFromAPI("https://na.api.pvp.net/api/lol/static-data/na/v1.2/champion?api_key=" + apiKey);
 		
 		JSONObject jsonChildObject = (JSONObject)json.get("data");
